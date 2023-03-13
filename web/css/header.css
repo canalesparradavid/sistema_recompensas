@@ -1,0 +1,11 @@
+.header{
+    display: block;
+    width:100%;
+    text-align: center;
+}
+
+.header span{
+    display: inline-block;
+    width: calc(90%/4);
+    text-align: center;
+}
