@@ -3,7 +3,13 @@
 class User{
 
     public static function restoreSession(){
-        echo "SESSION DE USUARIO RESTAURADA";
+        // TODO
+        return new User();
+    }
+
+    public function login($email, $password){
+        // TODO
+        return true;
     }
 }
 
