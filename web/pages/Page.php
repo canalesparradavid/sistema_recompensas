@@ -9,7 +9,7 @@ abstract class Page{
         $this->user = User::restoreSession();
     }
 
-    public function getContent(){ return ; }
+    public function getContent(){ }
 }
 
 ?>
