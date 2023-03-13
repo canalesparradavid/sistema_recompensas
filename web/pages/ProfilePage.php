@@ -3,7 +3,11 @@
 include_once "Page.php";
 
 class ProfilePage extends Page{
-    public function getContent(){
+    protected function setRootDir() : string{
+        return "./templates/profile/";
+    }
+
+    public function getContent() : string{
         return "Profile";
     }
 }

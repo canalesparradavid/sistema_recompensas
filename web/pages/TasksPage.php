@@ -3,7 +3,11 @@
 include_once "Page.php";
 
 class TasksPage extends Page{
-    public function getContent(){
+    protected function setRootDir() : string{
+        return "./templates/tasks/";
+    }
+
+    public function getContent() : string{
         return "Tasks";
     }
 }

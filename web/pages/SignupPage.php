@@ -3,7 +3,11 @@
 include_once "Page.php";
 
 class SignupPage extends Page{
-    public function getContent(){
+    protected function setRootDir() : string{
+        return "./templates/singup/";
+    }
+
+    public function getContent() : string{
         return "Signup";
     }
 }
