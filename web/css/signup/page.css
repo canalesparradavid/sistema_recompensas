@@ -1,26 +1,29 @@
-.login_form{
+.signup_form{
     display: flex;
     justify-content: center;
 }
 
-.login_form :not(.checkbox){
+.signup_form *{
     display: block;
     padding: 10px;
     margin: 5px;
 }
 
-.login_form span{
-    /* margin: 5px;
-    padding: 10px; */
+.check_box_span{
+    display: block;
     text-align: center;
 }
 
-.login_form label{
+.check_box_span *{
+    display: inline;
+}
+
+.signup_form label:not(.checkbox){
     align: center;
     text-align: center;
 }
 
-.login_form input{
+.signup_form input{
     margin-left: auto;
     margin-right: auto;
 }
