@@ -137,6 +137,10 @@ class User{
     }
 
     public function signup($nick, $email, $password){
+        // Compruebo que la contraseña sea valida
+        if(strlen($password) < 8)
+            return User::SignUpBadPass;
+
         $db = DB::connect();
 
         // Compruebo si ya existe el email
@@ -161,6 +165,10 @@ class User{
         ";
 
         $result = $db->query($insert);
+
+        $db->close();
+
+        $this->email = $email;
 
         User::createSession($this);
 
