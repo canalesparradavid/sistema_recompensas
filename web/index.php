@@ -1,5 +1,6 @@
 <?php
 
+include_once "models/DB.php";
 include_once "pages/LoginPage.php";
 include_once "pages/MainPage.php";
 include_once "pages/ProfilePage.php";
