@@ -10,6 +10,12 @@ class ProfilePage extends Page{
     public function getContent() : string{
         $page_content = file_get_contents($this->root_dir."page.html");
 
+        // Cambio la informacion del perfil
+        $page_content = str_replace("##NICKNAME##", $this->user->getNickName(), $page_content);
+        $page_content = str_replace("##EMAIL##", $this->user->getEmail(), $page_content);
+        $page_content = str_replace("##CP##", 0, $page_content);    // TODO
+        $page_content = str_replace("##CR##", 0, $page_content);    // TODO
+
         // Relleno el resumen de puntos TODO Enlazar con BBDD
         $page_content_parts = explode("<!-- RESUMEN-PUNTOS -->", $page_content);
         $points_resume = '';
