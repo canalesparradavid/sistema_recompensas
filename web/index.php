@@ -31,6 +31,6 @@ switch($page_name){
 }
 
 // Cargo el contenido en pantalla
-echo $page_contents;
+echo $page->loadPage();
 
 ?>
