@@ -21,3 +21,20 @@
     text-decoration: none;
     color: black;
 }
+
+/* Profile Menu Dropdown */
+.profile {
+    display: inline-block;
+    position: relative;
+}
+
+.profile_menu {
+    display: none;
+    position: absolute;
+    align-content: center;
+    left: 35%;
+}
+
+.profile:hover .profile_menu {
+    display: block;
+}
