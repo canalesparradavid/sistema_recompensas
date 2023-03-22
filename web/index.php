@@ -40,7 +40,7 @@ switch($page_name){
         $page = new ProfilePage();
         break;
      default:
-        $page = new Mainpage();
+        $page = new MainPage();
 }
 
 // Sustituyo el contenido principal de la pagina

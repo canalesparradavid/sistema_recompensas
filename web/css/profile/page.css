@@ -1,0 +1,36 @@
+.perfil li{
+    list-style: none;
+}
+
+.perfil{
+    display: flex;
+    margin-top: 15px;
+    align-self: center;
+    width: calc(2*100vh);
+}
+
+.resumen_perfil{
+    width: calc(2*35vh);
+}
+
+.datos{
+    display: flex;
+    height: 12vh;
+}
+
+.profile_image{
+    margin-left: 15px;
+    max-width: 200px;
+    max-height: 100px;
+}
+
+.resumen_puntos{
+    height: 70vh;
+    overflow-y: scroll;
+}
+
+.objetivos{
+    overflow-y: scroll;
+    height: 82vh;
+    width: calc(2*65vh);
+}
