@@ -49,6 +49,11 @@ class User{
         return $user;
     }
 
+    public function destroySession(){
+        setcookie("token", "", time()-(60*60*24*7));
+        unset($_COOKIE['token']);
+    }
+
     public static function createSession($user){
         $db = DB::connect();
 
@@ -191,6 +196,10 @@ class User{
         User::createSession($this);
 
         return User::SignUpOK;
+    }
+
+    public function logout(){
+        $this->destroySession();
     }
 }
 

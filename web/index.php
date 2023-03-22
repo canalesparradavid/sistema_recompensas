@@ -2,6 +2,7 @@
 
 include_once "models/DB.php";
 include_once "pages/LoginPage.php";
+include_once "pages/LogoutPage.php";
 include_once "pages/MainPage.php";
 include_once "pages/ProfilePage.php";
 include_once "pages/RewardsPage.php";
@@ -25,6 +26,9 @@ switch($page_name){
         break;
     case 'profile':
         $page = new ProfilePage();
+        break;
+    case 'logout':
+        $page = new LogoutPage();
         break;
      default:
         $page = new MainPage();
