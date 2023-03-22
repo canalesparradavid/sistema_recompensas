@@ -22,6 +22,15 @@
     color: black;
 }
 
+.profile_menu {
+    margin-top: 10px;
+}
+
+.profile_menu p {
+    margin-top: -15px;
+    margin-bottom: -15px;
+}
+
 /* Profile Menu Dropdown */
 .profile {
     display: inline-block;
