@@ -1,25 +1,25 @@
-.login_form{
+.login_form {
     display: flex;
     justify-content: center;
 }
 
-.login_form *{
+.login_form * {
     display: block;
     padding: 10px;
     margin: 5px;
 }
 
-.login_form label{
+.login_form label {
     align: center;
     text-align: center;
 }
 
-.login_form input{
+.login_form input {
     margin-left: auto;
     margin-right: auto;
 }
 
-.send{
+.send {
     margin-top: 10px;
     padding: 5px;
 }

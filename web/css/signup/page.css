@@ -1,34 +1,34 @@
-.signup_form{
+.signup_form {
     display: flex;
     justify-content: center;
 }
 
-.signup_form *{
+.signup_form * {
     display: block;
     padding: 10px;
     margin: 5px;
 }
 
-.check_box_span{
+.check_box_span {
     display: block;
     text-align: center;
 }
 
-.check_box_span *{
+.check_box_span * {
     display: inline;
 }
 
-.signup_form label:not(.checkbox){
+.signup_form label:not(.checkbox) {
     align: center;
     text-align: center;
 }
 
-.signup_form input{
+.signup_form input {
     margin-left: auto;
     margin-right: auto;
 }
 
-.send{
+.send {
     margin-top: 10px;
     padding: 5px;
 }

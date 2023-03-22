@@ -1,10 +1,16 @@
-.header{
+@import "font_faces.css";
+
+* {
+    font-family: 'Amiri';
+}
+
+.header {
     display: block;
     width:100%;
     text-align: center;
 }
 
-.header span{
+.header span {
     display: inline-block;
     width: calc(90%/4);
     text-align: center;
