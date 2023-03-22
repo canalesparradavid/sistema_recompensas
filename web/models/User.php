@@ -38,7 +38,8 @@ class User{
             FROM session INNER JOIN user
             WHERE
                 token = '$token' AND
-                end_date > $today_date
+                end_date > $today_date AND
+                user_id = id
             ;
         ";
         $db = DB::connect();
@@ -85,9 +86,26 @@ class User{
     public function getId(){
         $query = "SELECT id FROM user WHERE email = '$this->email'";
         $db = DB::connect();
-        $id = $db->query($query)->fetch_array()['id'];
+
+        $query_result = $db->query($query);
+
+        if($query_result->num_rows == 0) return "";
+
+        $id = $query_result->fetch_array()['id'];
 
         return $id;
+    }
+
+    public function getNickName(){
+        $query = "SELECT nick FROM user WHERE email = '$this->email'";
+        $db = DB::connect();
+        $query_result = $db->query($query);
+
+        if($query_result->num_rows == 0) return "";
+
+        $nick = $query_result->fetch_array()['nick'];
+
+        return $nick;
     }
 
     public function setEmail($email){
