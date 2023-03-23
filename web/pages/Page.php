@@ -40,7 +40,33 @@ abstract class Page{
     }
 
     private function constructHeader($header_content){
-        return $header_content;
+        preg_match_all("/##[^#]*##/", $header_content, $sections);
+        $sections = $sections[0];
+
+        $is_loged = ($this->user->isLoged())? 1 : 2;
+        $all_sections[0] = ["##LOGO_INPUT##", "##REWARDS_INPUT##", "##TASKS_INPUT##", "##PROFILE_INPUT##"];
+        $all_sections[1] = ["##PROFILE_VIEW_INPUT##", "##PROFILE_LOGOUT_INPUT##"];
+        $all_sections[2] = ["##PROFILE_SIGNIN_INPUT##", "##PROFILE_SIGNUP_INPUT##"];
+
+        $header_filtered_content = $header_content;
+
+        for($i = 0; $i < count($sections); $i += 2){
+            $section = $sections[$i];
+            $parts = explode($section, $header_filtered_content);
+
+
+            if(count($parts) != 3)
+                continue;
+
+            if(in_array($section, $all_sections[$is_loged]) or in_array($section, $all_sections[0])){
+                $header_filtered_content = $parts[0] . $parts[1] . $parts[2];
+            }
+            else{
+                $header_filtered_content = $parts[0] . $parts[2];
+            }
+        }
+
+        return $header_filtered_content;
     }
 
     private function getPreScriptsContent(){
