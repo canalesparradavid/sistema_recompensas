@@ -22,7 +22,7 @@ abstract class Page{
             $page_contents = $index_template;
 
             // Sustituyo cada  elemento por la plantilla correspondiente
-            $page_contents = str_replace("<!-- HEADER -->", $header_template, $page_contents);
+            $page_contents = str_replace("<!-- HEADER -->", $this->constructHeader($header_template), $page_contents);
             $page_contents = str_replace("<!-- COMMON-CSS-STYLES -->", $common_css_styles_template, $page_contents);
             $page_contents = str_replace("<!-- FOOTER -->", $footer_template, $page_contents);
 
@@ -39,19 +39,23 @@ abstract class Page{
         return $this->generated_html;
     }
 
-    public function getPreScriptsContent(){
+    private function constructHeader($header_content){
+        return $header_content;
+    }
+
+    private function getPreScriptsContent(){
         return file_get_contents($this->root_dir."pre_scripts.html");
     }
 
-    public function getPostScriptsContent(){
+    private function getPostScriptsContent(){
         return file_get_contents($this->root_dir."post_scripts.html");
     }
 
-    public function getStylesContent(){
+    private function getStylesContent(){
         return file_get_contents($this->root_dir."styles.html");
     }
 
-    abstract public function getContent() : string;
+    abstract protected function getContent() : string;
     abstract protected function setRootDir() : string;
 }
 
