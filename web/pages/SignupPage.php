@@ -3,6 +3,13 @@
 include_once "Page.php";
 
 class SignupPage extends Page{
+    public function __construct(){
+        parent::__construct();
+
+        if($this->user->isLoged())
+            header("Location: ?p=main");
+    }
+    
     protected function setRootDir() : string{
         return "./templates/signup/";
     }

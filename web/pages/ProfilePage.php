@@ -3,6 +3,14 @@
 include_once "Page.php";
 
 class ProfilePage extends Page{
+    public function __construct(){
+        parent::__construct();
+
+        if(!$this->user->isLoged()){
+            header("Location: ?p=main");
+        }
+    }
+
     protected function setRootDir() : string{
         return "./templates/profile/";
     }

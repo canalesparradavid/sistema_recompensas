@@ -21,6 +21,8 @@ class User{
     // Atributos
     private $email = "";
 
+
+
     //Static methods
     public static function restoreSession(){
         $user = new User();
@@ -82,6 +84,10 @@ class User{
 
         // Establezco el nuevo token
         setcookie("token", $token, $end_time);
+    }
+
+    public function isLoged(){
+        return ($this->getEmail() != "");
     }
 
     public function getEmail(){
